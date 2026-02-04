@@ -1,36 +1,83 @@
 /* Put any custom CSS styles here.  */
 /* Be sure to delete the <style> tag in index.html if you want to use this stylesheet. */
+
+
+/* General or Prepopulated Styles */
 body {
   margin: 0;
   font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   min-height: 100vh;
+  background-color: grey;
 }
 
 * {
   box-sizing: border-box;
 }
 
+.credits {
+  color: #777;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: #000;
+    font-weight: bold;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .newsletter-signup-section-container {background-color: green;}
+}
+
+
+/* Newsletter Signup Section Styles */
+
 .newsletter-signup-section-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 3px #c8c8c880;
   columns: 2;
-}
-
-.newsletter-signup-side-container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50% 50%;
+  margin: 10px;
+  max-height: 100%;
+  max-width: 100%;
   padding: 32px;
-  height: 100%;
+
+  .newsletter-signup-side-container {
+    display: inline-block;
+    height: 100%;
+    padding: 32px;
+    text-align: left;
+    vertical-align: middle;
+
+    .newsletter-signup-features-container {
+      padding: 16px;
+
+      .newsletter-signup-features-icon {
+        height: 30px;
+        display: inline;
+        margin-right: 16px;
+        vertical-align: middle;
+      }
+    }
+
+    .newsletter-signup-image {
+      border-radius: 10px;
+      width: auto;
+      height: auto;
+    }
+  }
 }
 
-.newsletter-signup-features-container {
-  padding: 16px;
-}
-
-.newsletter-signup-image {
-  width: 200%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
+/* Breakpoints and Container Styles */
 
 .desktop-size-container {
   max-width: 1280px;
@@ -51,18 +98,4 @@ body {
   padding: 16px;
   columns: 4;
   column-gap: 16px;
-}
-
-.credits {
-  color: #777;
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  font-size: 11px;
-  text-align: center;
-}
-
-.credits a {
-  color: #000;
-  font-weight: bold;
 }
